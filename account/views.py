@@ -9,9 +9,7 @@ from .models import User
 
 
 class LoginView(views.LoginView):
-    def post(self, request):
-        # ここでログインロジックを処理する必要があります
-        pass
+    template_name = ""
 
 
 def login(request):

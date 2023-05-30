@@ -1,7 +1,7 @@
 from django.conf import  settings
 from django.urls import  reverse_lazy
 from django.contrib.auth import views
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth import authenticate, login, logout
@@ -38,7 +38,8 @@ class RegisterView(CreateView):
     success_url = reverse_lazy(settings.LOGIN_REDIRECT_URL)
 
 
-class ProfileView(View):
+class ProfileView(DetailView):
+    template_name = ""
     def get(self, request, username):
         # ここで個人ホームページの表示ロジックを処理する必要があります
         pass

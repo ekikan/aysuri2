@@ -1,10 +1,10 @@
-from django.conf import  settings
-from django.urls import  reverse_lazy
+from django.conf import settings
+from django.urls import reverse_lazy
 from django.contrib.auth import views
 from django.views.generic import CreateView, DetailView
 from django.shortcuts import render, redirect
 from django.views import View
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from .models import User
 
 
@@ -29,8 +29,6 @@ def login(request):
 
     # return HttpResponse("ログイン失敗しました")
     return render(request,"login.html", {"error_msg": "ログイン失敗しました"})
-class LogoutView(views.LogoutView):
-
 
 
 class RegisterView(CreateView):
